@@ -1,0 +1,34 @@
+name: build-demo-assets
+
+on:
+  push:
+    paths:
+      - "demo/generate_demo.py"
+      - ".github/workflows/build-demo-assets.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: pip install "Pillow>=10.0"
+      - name: Generate synthetic demo assets
+        run: python demo/generate_demo.py
+      - name: Commit generated demo images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add demo/screenshot_*.png demo/expected_stitched.png demo/contact_sheet.png demo/manifest.json
+          if git diff --cached --quiet; then
+            echo "Demo assets are already up to date."
+          else
+            git commit -m "Add synthetic demo screenshots"
+            git push
+          fi
