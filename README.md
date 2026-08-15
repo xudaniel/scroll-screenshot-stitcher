@@ -88,6 +88,24 @@ python stitch_scroll.py screenshots/*.jpeg \
   --keep-scrollbars
 ```
 
+## Demo
+
+A fully synthetic, non-personal dataset is included in [`demo/`](demo/). It contains four overlapping mobile screenshots, an expected long-image result, a contact sheet, known overlap metadata, and a deterministic generator.
+
+Try it directly:
+
+```bash
+python stitch_scroll.py \
+  demo/screenshot_01.png \
+  demo/screenshot_02.png \
+  demo/screenshot_03.png \
+  demo/screenshot_04.png \
+  -o demo/actual_stitched.png \
+  --report demo/actual_report.json
+```
+
+See [`demo/README.md`](demo/README.md) for the demo layout and regeneration instructions.
+
 ## Matching pipeline
 
 ```text
@@ -153,4 +171,4 @@ Do not commit sensitive source screenshots or generated audit reports unless you
 
 Current release: **v0.1.0**
 
-The core algorithm has been exercised on overlapping mobile billing-history screenshots containing highly repetitive transaction rows, including a difficult join with a relatively small overlap.
+The repository includes automated tests plus a fully synthetic regression/demo dataset with repetitive scrolling records and known overlap geometry.
