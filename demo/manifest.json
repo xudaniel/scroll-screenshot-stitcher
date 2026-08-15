@@ -1,0 +1,23 @@
+{
+  "synthetic": true,
+  "contains_personal_data": false,
+  "viewport": {
+    "width": 1170,
+    "height": 2532,
+    "header": 370,
+    "footer": 190,
+    "scroll_body_height": 1972
+  },
+  "scroll_positions_px": [
+    0,
+    1020,
+    2040,
+    3060
+  ],
+  "adjacent_body_overlap_px": [
+    952,
+    952,
+    952
+  ],
+  "records": 18
+}
