@@ -25,7 +25,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add demo/screenshot_*.png demo/expected_stitched.png demo/contact_sheet.png demo/manifest.json
+          git add demo/screenshot_*.png demo/expected_stitched.png demo/contact_sheet.png
+          git add -f demo/manifest.json
           if git diff --cached --quiet; then
             echo "Demo assets are already up to date."
           else
