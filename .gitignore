@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Sensitive or generated screenshot data
+screenshots/
+inputs/
+outputs/
+*.json
+combined*.png
+combined*.jpg
+combined*.jpeg
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
