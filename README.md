@@ -1,5 +1,9 @@
 # Scroll Screenshot Stitcher
 
+[![CI](https://github.com/xudaniel/scroll-screenshot-stitcher/actions/workflows/test.yml/badge.svg)](https://github.com/xudaniel/scroll-screenshot-stitcher/actions/workflows/test.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-111827.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3572A5.svg)](pyproject.toml)
+
 A high-confidence, pixel-preserving stitcher for vertically scrolling screenshots.
 
 It is designed for mobile apps and web pages where the top and bottom UI stay fixed while the body scrolls. The tool detects overlap between adjacent screenshots, removes repeated content, chooses safe seams, optionally removes transient scrollbars, and emits a JSON audit trail showing where every output region came from.
@@ -91,6 +95,10 @@ python stitch_scroll.py screenshots/*.jpeg \
 ## Demo
 
 A fully synthetic, non-personal dataset is included in [`demo/`](demo/). It contains four overlapping mobile screenshots, an expected long-image result, a contact sheet, known overlap metadata, and a deterministic generator.
+
+![Synthetic scrolling screenshot inputs](demo/contact_sheet.png)
+
+![Expected stitched output](demo/expected_stitched.png)
 
 Try it directly:
 
